@@ -1,12 +1,14 @@
 from webapp.models import HostBook, STATUS_CHOICES
 from django.shortcuts import render, get_object_or_404, redirect
-from webapp.forms import HostBookForm
+from webapp.forms import HostBookForm, SearchForm
 
 
 def index_view(request, *args, **kwargs):
     hosts = HostBook.objects.filter(status='active').order_by('created_at')
+    search_form = SearchForm()
     return render(request, 'index.html', context={
-        'hosts': hosts
+        'hosts': hosts,
+        'search_form': search_form,
     })
 
 def hostbook_create_view(request, *args, **kwargs):
@@ -18,7 +20,7 @@ def hostbook_create_view(request, *args, **kwargs):
     elif request.method == 'POST':
         form = HostBookForm(data=request.POST)
         if form.is_valid():
-            tracker = HostBook.objects.create(
+            HostBook.objects.create(
                 name=form.cleaned_data['name'],
                 email=form.cleaned_data['email'],
                 text=form.cleaned_data['text'],
@@ -57,3 +59,12 @@ def hostbook_delete_view(request, pk):
         host.delete()
         return redirect('index')
 
+
+def search_by_name(request, *args, **kwargs):
+    search = request.GET.get('search')
+    hosts = HostBook.objects.filter(name__contains=search)
+    form = SearchForm()
+    return render(request, 'index.html', context={
+        'hosts': hosts,
+        'form': form,
+})

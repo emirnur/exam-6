@@ -10,3 +10,6 @@ class HostBookForm(forms.Form):
     text = forms.CharField(max_length=3000, required=True, label='Текст',
                            widget=widgets.Textarea)
 
+
+class SearchForm(forms.Form):
+    search = forms.CharField(max_length=200, required=True, label='Поиск')
