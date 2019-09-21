@@ -49,4 +49,11 @@ def hostbook_update_view(request, pk):
         else:
             return render(request, 'update.html', context={'form': form, 'host': host})
 
+def hostbook_delete_view(request, pk):
+    host = get_object_or_404(HostBook, pk=pk)
+    if request.method == 'GET':
+        return render(request, 'delete.html', context={'host': host})
+    elif request.method == 'POST':
+        host.delete()
+        return redirect('index')
 

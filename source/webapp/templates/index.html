@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
 {% block menu %}
-    <li><a href="{% url 'hostbook_add' %}">Add HostBook</a></li>
+    <li><a href="{% url 'hostbook_add' %}">Add Host</a></li>
 {% endblock %}
 
 {% block content %}
     <h1 class="text-center text-white">HostBook</h1>
 <div class="row">
     {% for host in hosts %}
-        <div class="col-sm-4 pt-3">
+        <div class="col-sm-4 pt-3 d-flex align-items-stretch">
             <div class="card">
                 <div class="card-header text-center bg-dark mb-3 text-white">
                     <h5 class="card-title">{{ host.name }} ({{ host.email }})</h5>
                 </div>
                 <div class="card-body text-center">
-                    <p>{{ host.text }}</p>
-                    <p><a href="{% url 'hostbook_update' host.pk %}" class="btn btn-dark">Edit</a> <a href="" class="btn btn-dark">Delete</a></p>
+                    <p class="host-text">{{ host.text }}</p>
+                    <div>
+                        <a href="{% url 'hostbook_update' host.pk %}" class="btn btn-dark">Edit</a>
+                        <a href="{% url 'hostbook_delete' host.pk %}" class="btn btn-dark">Delete</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Update Host{% endblock %}
-{% block menu %}
-    <li><a href="{% url 'hostbook_update' host.pk %}">View</a></li>
-{% endblock %}
+
 {% block content %}
     <h1>Update Tracker</h1>
     <form method="POST" action="{% url "hostbook_update" host.pk %}">
