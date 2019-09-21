@@ -28,3 +28,25 @@ def hostbook_create_view(request, *args, **kwargs):
             return render(request, 'hostbook_create.html', context={
                 'form': form
             })
+
+def hostbook_update_view(request, pk):
+    host = get_object_or_404(HostBook, pk=pk)
+    if request.method == 'GET':
+        form = HostBookForm(data={
+            'name': host.name,
+            'email': host.email,
+            'text': host.text,
+        })
+        return render(request, 'update.html', context={'form': form, 'host': host})
+    elif request.method == 'POST':
+        form = HostBookForm(data=request.POST)
+        if form.is_valid():
+            host.name = form.cleaned_data['name']
+            host.email = form.cleaned_data['email']
+            host.text = form.cleaned_data['text']
+            host.save()
+            return redirect('index')
+        else:
+            return render(request, 'update.html', context={'form': form, 'host': host})
+
+

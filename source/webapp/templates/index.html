@@ -14,7 +14,7 @@
                 </div>
                 <div class="card-body text-center">
                     <p>{{ host.text }}</p>
-                    <p><a href="" class="btn btn-dark">Edit</a> <a href="" class="btn btn-dark">Delete</a></p>
+                    <p><a href="{% url 'hostbook_update' host.pk %}" class="btn btn-dark">Edit</a> <a href="" class="btn btn-dark">Delete</a></p>
                 </div>
             </div>
         </div>
