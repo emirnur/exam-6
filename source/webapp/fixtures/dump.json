@@ -1,0 +1,80 @@
+[
+{
+  "model": "webapp.hostbook",
+  "pk": 1,
+  "fields": {
+    "name": "Emir",
+    "email": "emir@mail.ru",
+    "text": "sadfsdafsadgsadfsdfsadfsdafsdf\r\nsdafsadfsdfsadfsadfsadf",
+    "created_at": "2019-09-21T07:01:35.289Z",
+    "updated_at": "2019-09-21T07:02:00.162Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.hostbook",
+  "pk": 2,
+  "fields": {
+    "name": "John",
+    "email": "John@gmail.com",
+    "text": "wqfwqdfwdqfwdfwdfwqfdwqf",
+    "created_at": "2019-09-21T07:02:49.901Z",
+    "updated_at": "2019-09-21T07:02:49.901Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "webapp.hostbook",
+  "pk": 3,
+  "fields": {
+    "name": "Clarck",
+    "email": "Clarck@gmail.com",
+    "text": "wqfdfwdfwqdfwqfwdfwqdfwdfwdf",
+    "created_at": "2019-09-21T07:03:36.886Z",
+    "updated_at": "2019-09-21T07:03:36.886Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.hostbook",
+  "pk": 4,
+  "fields": {
+    "name": "Bermet",
+    "email": "Bermet@gmail.com",
+    "text": "dsgdsgdsgdsgsafsafsafsafsafsfd",
+    "created_at": "2019-09-21T07:04:23.384Z",
+    "updated_at": "2019-09-21T07:04:23.385Z",
+    "status": "active"
+  }
+},
+{
+  "model": "webapp.hostbook",
+  "pk": 5,
+  "fields": {
+    "name": "China",
+    "email": "China@mail.ru",
+    "text": "sadfsafsadfsafsadfsadfsadfsdf",
+    "created_at": "2019-09-21T07:04:55.985Z",
+    "updated_at": "2019-09-21T07:04:55.985Z",
+    "status": "blocked"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$gjrHfYldgCzH$bysPWlzTE2dpf6WW43ctfEWA4MapqYhBu3gedmXk6+g=",
+    "last_login": "2019-09-21T06:49:15.245Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-09-21T05:23:45.232Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
